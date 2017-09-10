@@ -1,0 +1,10 @@
+{
+    "global": {
+        "title": "Deer",
+        "subtitle": null,
+        "description": "Emma Blog",
+        "author": "Emma(Lu Zheng)",
+        "url": "http://yoursite.com"
+    },
+    "theme": {}
+}

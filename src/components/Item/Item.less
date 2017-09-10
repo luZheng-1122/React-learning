@@ -1,0 +1,64 @@
+@colorBlockW: 340px;
+
+.Item{
+    height: 150px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: rgb(244,244,246);
+
+    .content{
+        position: relative;
+        height: 100%;
+    }
+
+    /* Large desktop */
+    @media screen and (min-width: 1200px) {
+        .content {
+            width: 1140px - @colorBlockW;
+            max-width: 100%;
+        }
+    }
+    /* Portrait tablet to landscape and desktop */
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        .content {
+            width: 960px - @colorBlockW;
+            max-width: 100%;
+        }
+    }
+    /* Landscape phone to portrait tablet */
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+        .content {
+            width: 720px - @colorBlockW;
+            max-width: 100%;
+        }
+    }
+    /* Landscape phones and down */
+    @media screen and (max-width: 480px) {
+        .content {
+            width: 540px - @colorBlockW;
+            max-width: 100%;
+            // min-width: 420px;
+        }
+    }
+    
+    .title{
+        position: absolute;
+        font-size: 24px;
+        left: 30px;
+        top: 20px;
+    }
+    .date{
+        position: absolute;
+        font-size: 18px;
+        bottom: 20px;
+        right: 10px;
+    }
+    .colorBlock{
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 150px;
+        height: 150px;
+        // background-color: rgb(43,47,60);
+    }
+}
