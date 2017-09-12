@@ -38,9 +38,10 @@ export function getList() {
         }
     }
 
-    const request = axios.get(baseURL+url);
+    const request = axios.request(config);
     // getData(url);
-    console.log('no then',request);//promise object
+    // console.log('no then',request);
+    //promise object, but after this, the promise will dispatch it
 
     return {
         type: GET_LIST,
@@ -49,8 +50,8 @@ export function getList() {
 }
 
 export function getConfig() {
-    const url = ROOT_URL + 'config.json';
-    const data = axios.get('public/async/config.json');
+    const url = 'config.json';
+    const data = axios.get(baseURL+url);
 
     return {
         type: GET_CONFIG,
