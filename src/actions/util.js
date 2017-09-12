@@ -1,12 +1,7 @@
 import axios from 'axios';
-import {getData} from './util';
-export const GET_LIST = 'get_list';
-export const GET_CONFIG = 'get_config';
-
-const ROOT_URL = './async/';
 const baseURL = 'public/async/'
-export function getList() {
-    const url = 'lists/list.json';
+
+export function getData(url) {
     const config = {
         url: url,
         method: 'get',
@@ -37,23 +32,13 @@ export function getList() {
             // Do whatever you want with the native progress event
         }
     }
-
-    const request = axios.get(baseURL+url);
-    // getData(url);
-    console.log('no then',request);//promise object
-
-    return {
-        type: GET_LIST,
-        payload: request
-    };
-}
-
-export function getConfig() {
-    const url = ROOT_URL + 'config.json';
-    const data = axios.get('public/async/config.json');
-
-    return {
-        type: GET_CONFIG,
-        payload: data
-    }
+    axios.request(config)
+    .then(data => {
+        console.log('test axios',data.data);
+        return data.data;
+    })
+    .catch(error => {
+        console.log(error);
+        return error;
+    });
 }

@@ -25,7 +25,7 @@ class ListPage extends Component {
 
     render()  {
         let content = [];
-        console.log(this.props.list);
+        console.log('inside list container',this.props.list);
         // console.log(this.props.config);
         //到底要如何写此处的判断能绝对安全？
         if(this.props.list.posts && this.props.config.global) {    
