@@ -2,9 +2,11 @@ import axios from 'axios';
 import {getData} from './util';
 export const GET_LIST = 'get_list';
 export const GET_CONFIG = 'get_config';
+export const GET_ARTICLE = 'get_article';
 
 const ROOT_URL = './async/';
-const baseURL = 'public/async/'
+const baseURL = '/public/async/'
+
 export function getList() {
     const url = 'lists/list.json';
     const config = {
@@ -51,10 +53,34 @@ export function getList() {
 
 export function getConfig() {
     const url = 'config.json';
-    const data = axios.get(baseURL+url);
+    const config = {
+        url: url,
+        method: 'get',
+        baseURL: baseURL,
+        timeout: 10000,
+        responseType: 'json'
+    };
+    const data = axios.request(config);
 
     return {
         type: GET_CONFIG,
         payload: data
     }
+}
+
+export function getArticle(path) {
+    const config = {
+        url: path,
+        method: 'get',
+        baseURL: baseURL,
+        timeout: 10000,
+        responseType: 'json'
+    };
+    const data = axios.request(config);
+
+    return{
+        type: GET_ARTICLE,
+        payload: data
+    }
+
 }

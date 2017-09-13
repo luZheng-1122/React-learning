@@ -14,7 +14,7 @@ export default () => (
             <div id="side"></div> 
                 
             <Switch>                          
-                <Route  path='/post/:id' component={PostPage}/> 
+                <Route  path='/post/:year/:month/:day/:name' component={PostPage}/> 
                 <Route  path='/home' component={ListPage}/> 
             </Switch>     
             

@@ -1,18 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { pad } from '../../../lib/util';
+import { getArticle } from '../../../actions';
 
-export default class PostPage extends Component {
+class PostPage extends Component {
     constructor(props) {
         super(props);
-        let URL = this.props.match.params.id;
-        console.log(URL);
     }
 
+    componentWillMount() {
+        const path = this.getCurrentDataUrl();
+        this.props.getArticle(path);
+    }
+
+    getCurrentDataUrl =() => {
+        const {
+          year,
+          month,
+          day,
+          name
+        } = this.props.match.params;
+        const path = [parseInt(year), parseInt(month), parseInt(day), name]
+                        .map((item) => typeof item === 'number' ? pad(item, 2) : item).join('/');
+        return 'posts/' + path + '.json';
+      }
+
     getData = () => {
-        const data = require('../../../actions/async/posts/2017/08/19/hello-world.json');
-        console.log(data);
-        return (
-            <div dangerouslySetInnerHTML={{__html: data.content}}></div>
-        );
+        let result = [];
+        console.log('url');
+
+        if(this.props.article) {
+            result = (
+                <div dangerouslySetInnerHTML={{__html: this.props.article.content}}></div>
+            );
+        }
+        
+        return result;
     }
 
     render()  {
@@ -21,3 +45,14 @@ export default class PostPage extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        article: state.list
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    dispatch => bindActionCreators({ getArticle }, dispatch)
+)(PostPage);
