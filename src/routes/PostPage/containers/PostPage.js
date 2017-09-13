@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { pad } from '../../../lib/util';
 import { getArticle } from '../../../actions';
+import less from './PostPage.less';
 
 class PostPage extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class PostPage extends Component {
 
         if(this.props.article) {
             result = (
-                <div dangerouslySetInnerHTML={{__html: this.props.article.content}}></div>
+                <div className="content" dangerouslySetInnerHTML={{__html: this.props.article.content}}></div>
             );
         }
         
