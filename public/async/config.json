@@ -2,8 +2,10 @@
     "global": {
         "title": "Deer",
         "subtitle": null,
-        "description": "Hi, I am a front end developer and may be a designer. I write this blog just for sharing my ideas and testing the innovative trails for my interest. Enjoy.",
-        "author": "Emma(Lu Zheng)",
+        "descriptionO": "两个程序员，两地，两年。",
+        "descriptionT": "你每一天都很可爱。",
+        "descriptionTR": "许多人都想去月球，我却想多看看你",
+        "author": "Deer.路 & Mr.黄",
         "git":"https://github.com/nengliangZ",
         "email":"951107950zcg@gmail.com",
         "wechat":"TKLZ951107950",

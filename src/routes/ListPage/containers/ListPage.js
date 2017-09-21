@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import CoverHead from '../components/CoverHead/CoverHead';
+import CoverHead from '../../../components/CoverHead/CoverHead';
 import ListItems from '../components/ListItems/ListItems';
 import AuthorProfile from '../components/AuthorProfile/AuthorProfile';
-import Loading from '../../../lib/Loading'
+import Loading from '../../../lib/Loading';
+// import homeCover from '/public/source/img/blogCover.png';
 
 import { getList, getConfig } from '../../../actions';
 
@@ -24,6 +25,7 @@ class ListPage extends Component {
 
     render()  {
         let content = [];
+        const homeCover = '/public/source/img/1.jpg';
         // console.log(this.props.config);
         //到底要如何写此处的判断能绝对安全？
         if(this.props.list.posts && this.props.config.global) {    
@@ -41,7 +43,7 @@ class ListPage extends Component {
         return (
             <div id="ListPage">
                 <div id="ListHead">
-                    <CoverHead />
+                    <CoverHead picture = {homeCover} />
                 </div>
                 {content}              
             </div>

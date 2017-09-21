@@ -1,4 +1,19 @@
 #PostPage {
-    background-color: #fefefe;
-    max-width: 300px;
+    min-width: 300px;
+    margin: auto;
+
+    @media screen and (min-width: 1200px) {
+        width: 760px
+    }
+    @media screen and  (min-width: 768px) and (max-width: 1199px){
+        width: 580px;
+    }
+    /* Landscape phone to portrait tablet */
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+        width: 420px;
+    }
+    /* Landscape phones and down */
+    @media screen and (max-width: 480px) {
+        width: 340px;
+    }
 }

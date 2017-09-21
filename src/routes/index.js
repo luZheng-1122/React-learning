@@ -15,7 +15,7 @@ export default () => (
                 
             <Switch>                          
                 <Route  path='/post/:year/:month/:day/:name' component={PostPage}/> 
-                <Route  path='/home' component={ListPage}/> 
+                <Route  path='/love' component={ListPage}/> 
             </Switch>     
             
             <div id="footer"></div>

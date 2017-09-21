@@ -21,6 +21,7 @@
                 "day": 23,
                 "name": "react-theme"
             },
+            "img": "/public/source/img/1.jpg",
             "title": "Write a React Theme With hexo",
             "permalink": "http://yoursite.com/2017/08/23/react-theme/",
             "content": ""
@@ -36,6 +37,7 @@
                 "day": 19,
                 "name": "hello-world"
             },
+            "img": "/public/source/img/2.jpg",
             "title": "Hello World",
             "permalink": "http://yoursite.com/2017/08/19/hello-world/",
             "content": ""

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { pad } from '../../../lib/util';
 import { getArticle } from '../../../actions';
 import less from './PostPage.less';
+import CoverHead from '../../../components/CoverHead/CoverHead';
 
 class PostPage extends Component {
     constructor(props) {
@@ -29,11 +30,15 @@ class PostPage extends Component {
 
     getData = () => {
         let result = [];
-        console.log('url');
 
         if(this.props.article) {
             result = (
-                <div className="content" dangerouslySetInnerHTML={{__html: this.props.article.content}}></div>
+                <div>
+                    <CoverHead picture={this.props.article.img}/>
+                    <div id="PostPage">
+                        <div className="content" dangerouslySetInnerHTML={{__html: this.props.article.content}}></div>
+                    </div>
+                </div>
             );
         }
         
@@ -42,7 +47,10 @@ class PostPage extends Component {
 
     render()  {
         return (
-            <div id="PostPage">{this.getData()}</div>
+            <div>
+                {this.getData()}
+            </div>
+            
         );
     }
 }

@@ -17,7 +17,7 @@ export default class Item extends Component {
                         <span className="title">{item.title}</span>
                         <span className="date">{path.day}/{path.month}/{path.year}</span>
                     </div>
-                    <span className="colorBlock" style={{backgroundColor: this.props.colorBlock}}></span>
+                    <img className="colorBlock" src={item.img}></img>
                 </div>
             </Link>
         );
