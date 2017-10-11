@@ -1,9 +1,14 @@
-# Personal Blog
-Hi there, this is a personal blog demo with React, intended to well learn and practice the React techniques.
+# React Learning
+Hi there, this is a personal React learning set with some demos and notes, intended to well learn and practice the React techniques.
 
 All the materials and libs are listed below:
 
-## React Hot Loader Minimal Boilerplate
+1. [Starter Kit](#starter)
+2. [Axios](#axios)
+3. [React Redux](#redux)
+4. [React Router](#router)
+
+## React Hot Loader Minimal Boilerplate <a id="starter"></a>
 
 Bare minimum needed to have [React Hot Loader](https://github.com/gaearon/react-hot-loader) working with [webpack-dev-server](https://github.com/webpack/webpack-dev-server) and [Babel latest](https://babeljs.io/docs/plugins/preset-latest/) plugin.
 
@@ -13,7 +18,7 @@ See the [Migration to 3.0 guide](https://github.com/gaearon/react-hot-loader/tre
 npm run dev
 ```
 
-## [axios](https://github.com/axios/axios)
+## [axios](https://github.com/axios/axios) <a id="axios"></a>
 
 ### install
 ```
@@ -29,7 +34,7 @@ validateStatus: function (status) {
 ```
 2. using axios with redux-promise: redux-promise is a middleware applied on reducers, when the reducer receives a new state from axios, using the value directly is complex, where the promise works for retriving the data to the format that we can easily use.
 
-## react redux
+## react redux <a id="redux"></a>
 ### install
 ```
 npm install --save redux
@@ -41,7 +46,7 @@ npm install --save redux
 1. redux form: initialize form from state, use 'enablerReinitialise' property
 
 
-## react router
+## react router <a id="router"></a>
 ### install
 ```
 $ npm install --save react-router
